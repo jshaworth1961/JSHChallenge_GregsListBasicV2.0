@@ -1,0 +1,234 @@
+<!--Gregs List 2.0-->
+<!--This project is a further implementation of the MVC model. It also features the bootstrap
+"modal" structure-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <p class="p-greglist">Greg's List</p>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <!-- Button trigger modal -->
+                <p>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#car-form">
+                        Add a Car
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#house-form">
+                        Add a House
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#job-form">
+                        Add a Job
+                    </button>
+                </p>
+
+                <!-- Modal Car-->
+                <div class="modal fade" id="car-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add a Car</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form onsubmit="app.carController.addCar(event)">
+                                    <div class="form-group">
+                                        <label for="make">Make</label>
+                                        <input type="text" name="make" id="" class="form-control"
+                                            placeholder="Enter a make here" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="model">Model</label>
+                                        <input type="text" name="model" id="" class="form-control"
+                                            placeholder="Enter a model here">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="year">Year</label>
+                                        <input type="number" min="1900" max="2020" name="year" id=""
+                                            class="form-control" placeholder="Enter a year here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" min="0" name="price" id="" class="form-control"
+                                            placeholder="Enter a price here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <input type="text" name="description" id="" class="form-control"
+                                            placeholder="Enter a description here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="imgUrl">Image</label>
+                                        <input type="text" name="imgUrl" id="" class="form-control"
+                                            placeholder="Enter an image Url here">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal House-->
+                <div class="modal fade" id="house-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add a House</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form onsubmit="app.houseController.addHouse(event)">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" name="city" id="" class="form-control"
+                                            placeholder="Enter a city here" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="state">State</label>
+                                        <input type="text" name="state" id="" class="form-control"
+                                            placeholder="Enter a state here" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">Address</label>
+                                        <input type="text" name="address" id="" class="form-control"
+                                            placeholder="Enter an address here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="yearbuilt">Year Built</label>
+                                        <input type="number" min="0" name="yearbuilt" id="" class="form-control"
+                                            placeholder="Enter the year built here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="squareft">Square Footage</label>
+                                        <input type="number" name="squareft" id="" class="form-control"
+                                            placeholder="Enter the number of square feet here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="stories">Stories</label>
+                                        <input type="number" name="stories" id="" class="form-control"
+                                            placeholder="Enter the number of stories here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="price">Price</label>
+                                        <input type="number" name="price" id="" class="form-control"
+                                            placeholder="Enter the price here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Description</label>
+                                        <input type="number" name="description" id="" class="form-control"
+                                            placeholder="Enter the description here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="imgUrl">Image</label>
+                                        <input type="text" name="imgUrl" id="" class="form-control"
+                                            placeholder="Enter an image Url here">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Job-->
+                <div class="modal fade" id="job-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Add a Job</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form onsubmit="app.jobController.addJob(event)">
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" name="title" id="" class="form-control"
+                                            placeholder="Enter job title here" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="salary">Salary</label>
+                                        <input type="number" name="salary" id="" class="form-control"
+                                            placeholder="Enter job salary here" required>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="experienceneeded">Experience Needed</label>
+                                        <input type="number" name="experienceneeded" id="" class="form-control"
+                                            placeholder="Enter number of years experience needed here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">Job Description</label>
+                                        <input type="text" name="description" id="" class="form-control"
+                                            placeholder="Enter the job description here">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cars" class="row"></div>
+        <div id="homes" class="row"></div>
+        <div id="jobs" class="row"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+/*
+* {
+    outline: solid black;
+}
+*/
+
+body {
+    background-color: lightblue;
+}
+
+fieldset {
+    background-color: skyblue;
+    color: black;
+    font-weight: bold;
+    border: solid black;
+}
+
+.p-greglist {
+    background-color: darkblue;
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+}
