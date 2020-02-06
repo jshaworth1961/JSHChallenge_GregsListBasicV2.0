@@ -12,7 +12,10 @@ let _state = {
   cars: [],
 
   /** @type {House[]} */
-  homes: []
+  homes: [],
+
+  /** @type {Job[]} */
+  jobs: []
 
 
 };
